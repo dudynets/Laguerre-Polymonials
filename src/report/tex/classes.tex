@@ -422,6 +422,7 @@
 
 \textbf{GitHub репозиторій:} \url{https://github.com/dudynets/Laguerre-Polymonials}
     
+    
     \section*{Перетворення
 Лагера}\label{ux43fux435ux440ux435ux442ux432ux43eux440ux435ux43dux43dux44f-ux43bux430ux433ux435ux440ux430}
 
@@ -430,6 +431,7 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
 \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+\PY{o}{\PYZpc{}}\PY{k}{matplotlib} widget
 \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
 \PY{k+kn}{import} \PY{n+nn}{ipywidgets} \PY{k}{as} \PY{n+nn}{widgets}
 \PY{k+kn}{from} \PY{n+nn}{typing} \PY{k+kn}{import} \PY{n}{Callable}
@@ -437,7 +439,7 @@
 \end{Verbatim}
 \end{tcolorbox}
 
-    \section*{Визначення власних функцій для перетворення Лагера та
+    \section*{Визначення власної функції для перетворення Лагера та
 оберненого перетворення
 Лагера.}\label{ux432ux438ux437ux43dux430ux447ux435ux43dux43dux44f-ux432ux43bux430ux441ux43dux438ux445-ux444ux443ux43dux43aux446ux456ux439-ux434ux43bux44f-ux43fux435ux440ux435ux442ux432ux43eux440ux435ux43dux43dux44f-ux43bux430ux433ux435ux440ux430-ux442ux430-ux43eux431ux435ux440ux43dux435ux43dux43eux433ux43e-ux43fux435ux440ux435ux442ux432ux43eux440ux435ux43dux43dux44f-ux43bux430ux433ux435ux440ux430.}
 
@@ -445,24 +447,7 @@
 \prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{f\PYZus{}1}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
-    \PY{k}{if} \PY{n}{t} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{:}
-        \PY{k}{return} \PY{l+m+mi}{0}
-    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{t} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{pi} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}
-
-
-\PY{k}{def} \PY{n+nf}{f\PYZus{}2}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{t}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{t}\PY{p}{)}
-
-
-\PY{k}{def} \PY{n+nf}{f\PYZus{}3}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi} \PY{o}{\PYZhy{}} \PY{n}{t}\PY{p}{)} \PY{o}{*} \PY{n}{t} \PY{o}{/} \PY{l+m+mi}{2}
-
-
-\PY{k}{def} \PY{n+nf}{f\PYZus{}4}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
-    \PY{k}{if} \PY{n}{t} \PY{o}{!=} \PY{l+m+mi}{0}\PY{p}{:}
-        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{t} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)} \PY{o}{*} \PY{n}{t}
-    \PY{k}{else}\PY{p}{:}
-        \PY{k}{return} \PY{l+m+mi}{0}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{t} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{t}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -982,7 +967,7 @@ b{]}}\label{ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43aux43bux430ux
 
         \PY{c+c1}{\PYZsh{} Перетворення Лаґерра}
         \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}
             \PY{n}{laguerre\PYZus{}transform\PYZus{}tabulation\PYZus{}values}\PY{o}{.}\PY{n}{index}\PY{p}{,}
             \PY{n}{laguerre\PYZus{}transform\PYZus{}tabulation\PYZus{}values}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{L\PYZus{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
         \PY{p}{)}
@@ -1224,7 +1209,7 @@ test\_tabulate\_polynomial (\_\_main\_\_.TestLaguerreSolver.test\_tabulate\_poly
 {\ldots} ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.161s
+Ran 8 tests in 0.141s
 
 OK
     \end{Verbatim}
@@ -1232,7 +1217,7 @@ OK
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
 \prompt{Out}{outcolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-<unittest.main.TestProgram at 0x11fb1a150>
+<unittest.main.TestProgram at 0x12aa14d40>
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -1504,6 +1489,13 @@ bda>(*args, **kwargs)>
     \subsection*{\texorpdfstring{1.5.8 Графік
 \(\widetilde{f_1}^N(t)\)}{1.5.8 Графік \textbackslash widetilde\{f\_1\}\^{}N(t)}}\label{ux433ux440ux430ux444ux456ux43a-widetildef_1nt}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ f\_1(t):}
+    \ControlFlowTok{return}\NormalTok{ np.cos(t }\OperatorTok{+}\NormalTok{ np.exp(t) }\OperatorTok{/} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1531,96 +1523,6 @@ bda>(*args, **kwargs)>
 \caption{Widget screenshot}
 \end{figure}
 
-    \subsection*{\texorpdfstring{Графік
-\(\widetilde{f_2}^N(t)\)}{Графік \textbackslash widetilde\{f\_2\}\^{}N(t)}}\label{ux433ux440ux430ux444ux456ux43a-widetildef_2nt}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{19}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{ui}\PY{o}{.}\PY{n}{interactive\PYZus{}plot\PYZus{}laguerre\PYZus{}transform}\PY{p}{(}\PY{n}{f\PYZus{}2}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-interactive(children=(IntSlider(value=20, description='Макс. n', max=20), FloatSlider(value=10.0, description=…
-    \end{Verbatim}
-
-    
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{19}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-<function ipywidgets.widgets.interaction.\_InteractFactory.\_\_call\_\_.<locals>.<lam
-bda>(*args, **kwargs)>
-\end{Verbatim}
-\end{tcolorbox}
-        
-    \begin{figure}
-\centering
-\includegraphics{screenshots/classes_8.png}
-\caption{Widget screenshot}
-\end{figure}
-
-    \subsection*{\texorpdfstring{Графік
-\(\widetilde{f_3}^N(t)\)}{Графік \textbackslash widetilde\{f\_3\}\^{}N(t)}}\label{ux433ux440ux430ux444ux456ux43a-widetildef_3nt}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{20}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{ui}\PY{o}{.}\PY{n}{interactive\PYZus{}plot\PYZus{}laguerre\PYZus{}transform}\PY{p}{(}\PY{n}{f\PYZus{}3}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-interactive(children=(IntSlider(value=20, description='Макс. n', max=20), FloatSlider(value=10.0, description=…
-    \end{Verbatim}
-
-    
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{20}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-<function ipywidgets.widgets.interaction.\_InteractFactory.\_\_call\_\_.<locals>.<lam
-bda>(*args, **kwargs)>
-\end{Verbatim}
-\end{tcolorbox}
-        
-    \begin{figure}
-\centering
-\includegraphics{screenshots/classes_9.png}
-\caption{Widget screenshot}
-\end{figure}
-
-    \subsection*{\texorpdfstring{Графік
-\(\widetilde{f_4}^N(t)\)}{Графік \textbackslash widetilde\{f\_4\}\^{}N(t)}}\label{ux433ux440ux430ux444ux456ux43a-widetildef_4nt}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{21}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{ui}\PY{o}{.}\PY{n}{interactive\PYZus{}plot\PYZus{}laguerre\PYZus{}transform}\PY{p}{(}\PY{n}{f\PYZus{}4}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-interactive(children=(IntSlider(value=20, description='Макс. n', max=20), FloatSlider(value=10.0, description=…
-    \end{Verbatim}
-
-    
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{21}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-<function ipywidgets.widgets.interaction.\_InteractFactory.\_\_call\_\_.<locals>.<lam
-bda>(*args, **kwargs)>
-\end{Verbatim}
-\end{tcolorbox}
-        
-    \begin{figure}
-\centering
-\includegraphics{screenshots/classes_10.png}
-\caption{Widget screenshot}
-\end{figure}
-
     \subsection*{Висновок}\label{ux432ux438ux441ux43dux43eux432ux43eux43a}
 
 У лабораторній роботі було розглянуто використання многочленів Лаґерра у
@@ -1638,8 +1540,8 @@ bda>(*args, **kwargs)>
 для різних значень степенів. Це дозволило візуально спостерігати їхні
 властивості та залежність від параметрів.
 
-Також було проведено аналіз чотирьох функцій. Для них було побудовано
-графіки перетворення Лаґерра та оберненого перетворення, що дозволило
+Також було проведено функції f1. Для неї було побудовано
+графік перетворення Лаґерра та оберненого перетворення, що дозволило
 візуально спостерігати схожість графіку оберненого перетворення та
 початкової функції.
 

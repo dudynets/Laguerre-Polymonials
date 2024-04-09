@@ -64,6 +64,7 @@
 
         public KeyValuePair<double, Dictionary<int, double>> FindOptimalT(int maxN = 20, double epsilon = 1e-3, double maxT = 100, int tPoints = 1000)
         {
+            Console.WriteLine($"maxN: {maxN}, epsilon: {epsilon}, maxT: {maxT}, tPoints: {tPoints}");
             if (maxN < 0)
                 throw new ArgumentException("Value \"N\" must be positive");
 
@@ -111,7 +112,7 @@
 
             return new KeyValuePair<double, Dictionary<int, double>>(suitableT, result);
         }
-    
+
         public double SolveLaguerreTransform(Func<double, double> f, int maxN, int points = 10000)
         {
             if (maxN < 0)
@@ -136,7 +137,7 @@
             double result = integralSolver.Solve(0, maxT, points);
             return result;
         }
-    
+
         public Dictionary<int, double> TabulateLaguerreTransform(Func<double, double> f, int maxN, int points = 10000)
         {
             if (maxN < 0)
@@ -152,7 +153,7 @@
             }
             return result;
         }
-    
+
         public double SolveInverseLaguerreTransform(double[] h, double t)
         {
             double result = 0;

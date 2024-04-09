@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaguerrePolynomials", "LaguerrePolynomials\LaguerrePolynomials.csproj", "{D9162F53-C2B9-44B9-BBCC-98782C2F699A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaguerrePolynomialsTests", "LaguerrePolynomialsTests\LaguerrePolynomialsTests.csproj", "{283AEA55-1661-4CF8-9266-4E2A9486609B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{D9162F53-C2B9-44B9-BBCC-98782C2F699A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9162F53-C2B9-44B9-BBCC-98782C2F699A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9162F53-C2B9-44B9-BBCC-98782C2F699A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283AEA55-1661-4CF8-9266-4E2A9486609B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283AEA55-1661-4CF8-9266-4E2A9486609B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283AEA55-1661-4CF8-9266-4E2A9486609B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283AEA55-1661-4CF8-9266-4E2A9486609B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,9 @@
 using System.Numerics;
 
-namespace Laguerre {
-    class App {
+namespace Laguerre
+{
+    class App
+    {
         public const double BETA = 2.0;
         public const double SIGMA = 4.0;
         public const int N = 5;
@@ -15,7 +17,8 @@ namespace Laguerre {
                 (2 * Math.Pow(GAUSSIAN_LAMBDA, 2))
             ) / (GAUSSIAN_LAMBDA * Math.Sqrt(2 * Math.PI));
 
-        static void Main() {
+        static void Main()
+        {
             LaguerreSolver solver = new LaguerreSolver(BETA, SIGMA);
 
             Console.WriteLine("\nLaguerre polynomials tabulation:\n");
@@ -52,7 +55,7 @@ namespace Laguerre {
             {
                 if (value == null)
                     return new string(' ', width);
-                
+
                 var str = value.ToString();
 
                 if (string.IsNullOrEmpty(str))

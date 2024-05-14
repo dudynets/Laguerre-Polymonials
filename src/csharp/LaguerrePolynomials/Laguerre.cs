@@ -64,7 +64,6 @@
 
         public KeyValuePair<double, Dictionary<int, double>> FindOptimalT(int maxN = 20, double epsilon = 1e-3, double maxT = 100, int tPoints = 1000)
         {
-            Console.WriteLine($"maxN: {maxN}, epsilon: {epsilon}, maxT: {maxT}, tPoints: {tPoints}");
             if (maxN < 0)
                 throw new ArgumentException("Value \"N\" must be positive");
 

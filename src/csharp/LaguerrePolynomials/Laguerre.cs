@@ -146,7 +146,7 @@
                 throw new ArgumentException("Value \"points\" must be positive");
 
             var result = new Dictionary<int, double>();
-            for (int n = 0; n < maxN; n++)
+            for (int n = 0; n <= maxN; n++)
             {
                 result.Add(n, SolveLaguerreTransform(f, n, points));
             }

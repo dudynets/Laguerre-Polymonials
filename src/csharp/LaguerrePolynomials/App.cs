@@ -54,14 +54,14 @@ namespace Laguerre
             var gaussianInverseTransformationResult = solver.SolveInverseLaguerreTransform(gaussianH, 10);
             Console.WriteLine(gaussianInverseTransformationResult);
 
-            SavePolynomialsTabulationToFile(20, 10, 0.1);
+            SavePolynomialsTabulationToFile(20, 4, 0.1);
 
-            SaveTransformationToFile(F_1, "f1", 20, 10, 0.1);
+            SaveTransformationToFile(F_1, "f1", 20, 2, 0.1, 100000);
             SaveTransformationToFile(F_2, "f2", 20, 10, 0.1);
             SaveTransformationToFile(F_3, "f3", 20, 10, 0.1);
-            SaveTransformationToFile(F_4, "f4", 20, 10, 0.1);
+            SaveTransformationToFile(F_4, "f4", 20, 10, 0.1, 100000);
 
-            SaveTransformationToFile(NORMAL_GAUSSIAN_DISTRIBUTION, "normal_gaussian", 20, 10, 0.1);
+            SaveTransformationToFile(NORMAL_GAUSSIAN_DISTRIBUTION, "normal_gaussian", 20, 2, 0.1);
         }
 
         static void PrintTabulation<T, K>(Dictionary<T, K> tabulation, List<string> headers, int columnWidth = 8) where T : INumber<T> where K : INumber<K>
